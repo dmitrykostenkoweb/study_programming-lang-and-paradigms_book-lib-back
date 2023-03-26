@@ -1,0 +1,35 @@
+{
+  "name": "book-library",
+  "version": "1.0.0",
+  "description": "A simple book library app",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "book",
+    "library",
+    "typescript",
+    "nodejs",
+    "express"
+  ],
+  "author": "Dmytro Kostenko",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.1",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/mongoose": "^5.11.97",
+    "nodemon": "^2.0.22",
+    "typescript": "^4.9.5"
+  }
+}
