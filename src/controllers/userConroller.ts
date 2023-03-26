@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import User from "../models/user.model";
 
 export class UserController {
-  private path = "/library_users";
+  private path = "/users";
   public router = express.Router();
 
   constructor() {
