@@ -3,6 +3,7 @@ import express from "express";
 
 import bookRouter from "./controllers/bookController";
 import userController from "./controllers/userConroller";
+import libraryController from "./controllers/libraryController";
 
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI =
@@ -11,7 +12,7 @@ const MONGODB_URI =
 const app = express();
 
 app.use(express.json());
-app.use([bookRouter, userController]);
+app.use([bookRouter, userController, libraryController]);
 
 mongoose
   .connect(MONGODB_URI, {
