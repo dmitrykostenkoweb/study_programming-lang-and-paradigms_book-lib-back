@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost:27017/book-library";
 
-const app = express();
+export const app = express();
 
 app.use(express.json());
 app.use([bookRouter, userController, libraryController]);

@@ -16,7 +16,7 @@ class BookController {
     this.router.put(`${this.path}/:id`, this.updateBook);
     this.router.delete(`${this.path}/:id`, this.deleteBook);
   }
-  private async getBooks(req: Request, res: Response): Promise<void> {
+  public async getBooks(req: Request, res: Response): Promise<void> {
     try {
       const { title, author, genre } = req.query;
       const query: { [key: string]: any } = {};
@@ -89,3 +89,4 @@ class BookController {
 }
 
 export default new BookController().router;
+export {BookController}
