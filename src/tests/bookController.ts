@@ -102,7 +102,7 @@ describe('getBooks', (): void => {
     server = app.listen();
   });
 
-  after(() => {
+  after((): void => {
     server.close();
   });
 
@@ -110,7 +110,7 @@ describe('getBooks', (): void => {
     spy = sinon.spy();
     app.use('/', (req, res) => {
       spy();
-      res.sendStatus(200);
+      res.json({ message: 'Hello, World!' });
     });
   });
 
@@ -126,11 +126,15 @@ describe('getBooks', (): void => {
       requestPromises.push(request(server).get('/'));
     }
 
-    const responses = await Promise.all(requestPromises);
+    const responses: any[] = await Promise.all(requestPromises);
 
     for (const response of responses) {
       expect(response.status).to.equal(200);
+      expect(response.body).to.deep.equal({ message: 'Hello, World!' });
     }
     expect(spy.callCount).to.equal(requestCount);
   });
 })
+
+
+// + testy body
